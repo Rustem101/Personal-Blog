@@ -1,0 +1,46 @@
+<%- include("partials/header") -%>
+
+<section id="hero" class="bg-light py-5">
+  <div class="container">
+    <h2 class="text-center">Why does this website exist?</h2>
+    <p class="text-center">
+      Most importantly, to make me a better thinker. The process of writing, I
+      believe, is a sort of learning because it makes you give a structure to
+      what you already know and further develop your thoughts. Plus, it’s fun!
+    </p>
+  </div>
+</section>
+
+<section id="about" class="py-5">
+  <div class="container">
+    <h2>About Me</h2>
+    <p>
+      Just like you, I am a human being. One of my biggest concerns is to get
+      the most out of my time, so I love doing things that will help me become
+      better - mostly those I'm curious about.
+    </p>
+  </div>
+</section>
+
+<section id="blog" class="bg-light py-5">
+  <div class="container">
+    <h2>Blog</h2>
+    <div class="row">
+      <% for (let post of posts) { %>
+      <div class="col-md-6">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h3 class="card-title"><%= post.title %></h3>
+            <p class="card-text"><%= post.body.substring(0,100)%> ...</p>
+            <a href="/posts/<%=post.title%>" class="btn btn-primary"
+              >Read More</a
+            >
+          </div>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </div>
+</section>
+
+<%- include("partials/footer") -%>

@@ -1,0 +1,10 @@
+<%- include("partials/header") -%>
+
+<div class="container">
+  <h1 class="text-center py-4"><%= post.title %></h1>
+  <% post.body.split('\n').forEach(paragraph => { %>
+  <p><%= paragraph %></p>
+  <% }); %>
+</div>
+
+<%- include("partials/footer") -%>
